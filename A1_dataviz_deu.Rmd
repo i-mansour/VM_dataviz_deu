@@ -1,6 +1,6 @@
 ---
 title: "Praktikum Aktivität 1"
-author: "Dr. India Mansour"
+author: "Dr. India Mansour, with translation by Ayla Kesim"
 date: "January 2021"
 output: 
   html_document:
@@ -17,13 +17,13 @@ knit: (function(input_file, encoding) {
 
 Das Ziel dieser Aktivität ist es zu lernen, wie man `ggplot2` zur Datenvisualisierung in R verwendet. Datenvisualisierung kann verwendet werden, um nach Patterns in Daten zu suchen - dies wird Datenexploration genannt. Datenvisualisierung ist auch wichtig, um Forschungsergebnisse an andere zu kommunizieren. Wenn Daten klar, ehrlich und im besten Fall auch schön visualisiert sind, sind sie leichter zu verstehen (für euch und andere, mit denen ihr sie vielleicht teilt).
 
-Die [ggplot2](https://ggplot2.tidyverse.org/) Package kann verwendet werden, um eine Vielzahl von Datenvisualisierungen zu erstellen, wobei "Geoms" verwendet werden, um Daten auf verschiedene Arten darzustellen. Beispiele für verschiedene Geoms werden auf der ersten Seite dieses ggplot2[Cheat Sheet](https://rstudio.com/wp-content/uploads/2015/03/ggplot2-cheatsheet.pdf) gezeigt.
+Die [ggplot2](https://ggplot2.tidyverse.org/) Package kann verwendet werden, um eine Vielzahl von Datenvisualisierungen zu erstellen, wobei "Geoms" verwendet werden, um Daten auf verschiedene Arten darzustellen. Beispiele für verschiedene Geoms werden auf der ersten Seite dieses ggplot2 [Cheat Sheet](https://rstudio.com/wp-content/uploads/2015/03/ggplot2-cheatsheet.pdf) gezeigt.
 
 In dieser Übung werdet ihr die Grundlagen von `ggplot2` lernen, indem ihr dem Kapitel Datenvisualisierung des Buches [R for Data Science](https://r4ds.had.co.nz/index.html) von Hadley Wickham (einer der tidyverse EntwicklerInnen) und Garrett Grolemund folgt. Dann werdet ihr einen Datensatz aus einem Experiment herunterladen, in dem untersucht wurde, wie sich die mikrobielle Diversität im Boden auf die Effizienz der Kohlenstoffnutzung auswirkt und die Umsetzung eurer neuen Datenvisualisierungsfähigkeiten üben.
 
 Das Arbeitsblatt für diese Aktivität findet ihr [hier](https://docs.google.com/document/d/1bhtAQCIuzZ82dqD-FLB4_BVT4BPwBN0Sz9VdHbrGDFA/edit?usp=sharing).
 
-##"R for Data Science" folgen
+## "R for Data Science" folgen
 
 ### Installieren von tidyverse
 
@@ -67,7 +67,7 @@ Ihr findet die Daten von Domeignoz-Horta *et al.* 2020 über [OSF](https://osf.i
 
 Ladet die Daten in R (Tipp: versucht es mit `read.table`). Nun überprüft sie. Was sind die Dimensionen dieses Data Frames? Wie lauten die Spaltennamen? Geht nun zurück zum Abschnitt Methoden von Domeignoz-Horta et al. 2020. Was war ihr experimentelles Design? Welche Behandlungen haben sie angewandt? Wo findet man in eurem Data Frame Informationen über die Behandlungen? Welche Response-Variablen haben sie gemessen? Wo findet man in eurem Data Frame Informationen über die Response-Variablen? 
 
-(*Fügt eure Antworten auf diese Fragen in das Arbeitsblatt ein*)
+*Fügt eure Antworten auf diese Fragen in das Arbeitsblatt ein*
 
 ### 2. Vergleich verschiedener Möglichkeiten zur Visualisierung der Daten
 

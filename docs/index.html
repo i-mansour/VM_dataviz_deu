@@ -9,7 +9,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
-<meta name="author" content="Dr. India Mansour" />
+<meta name="author" content="Dr. India Mansour, with translation by Ayla Kesim" />
 
 
 <title>Praktikum Aktivität 1</title>
@@ -1510,7 +1510,7 @@ div.tocify {
 
 
 <h1 class="title toc-ignore">Praktikum Aktivität 1</h1>
-<h4 class="author">Dr. India Mansour</h4>
+<h4 class="author">Dr. India Mansour, with translation by Ayla Kesim</h4>
 <h4 class="date">January 2021</h4>
 
 </div>
@@ -1519,53 +1519,53 @@ div.tocify {
 <div id="übersicht" class="section level2">
 <h2>Übersicht</h2>
 <p>Das Ziel dieser Aktivität ist es zu lernen, wie man <code>ggplot2</code> zur Datenvisualisierung in R verwendet. Datenvisualisierung kann verwendet werden, um nach Patterns in Daten zu suchen - dies wird Datenexploration genannt. Datenvisualisierung ist auch wichtig, um Forschungsergebnisse an andere zu kommunizieren. Wenn Daten klar, ehrlich und im besten Fall auch schön visualisiert sind, sind sie leichter zu verstehen (für euch und andere, mit denen ihr sie vielleicht teilt).</p>
-<p>Das <a href="https://ggplot2.tidyverse.org/">ggplot2</a> Paket kann verwendet werden, um eine Vielzahl von Datenvisualisierungen zu erstellen, wobei “Geoms” verwendet werden, um Daten auf verschiedene Arten darzustellen. Beispiele für verschiedene Geoms werden auf der ersten Seite dieses ggplot2<a href="https://rstudio.com/wp-content/uploads/2015/03/ggplot2-cheatsheet.pdf">Cheat Sheet</a> gezeigt.</p>
-<p>In dieser Übung werdet ihr die Grundlagen von <code>ggplot2</code> lernen, indem ihr dem Kapitel Datenvisualisierung des Buches <a href="https://r4ds.had.co.nz/index.html">R for Data Science</a> von Hadley Wickham (einer der tidyverse Entwickler) und Garrett Grolemund folgt. Dann werdet ihr einen Datensatz aus einem Experiment herunterladen, in dem untersucht wurde, wie sich die mikrobielle Diversität im Boden auf die Effizienz der Kohlenstoffnutzung auswirkt und die Umsetzung eurer neuen Datenvisualisierungsfähigkeiten üben.</p>
+<p>Die <a href="https://ggplot2.tidyverse.org/">ggplot2</a> Package kann verwendet werden, um eine Vielzahl von Datenvisualisierungen zu erstellen, wobei “Geoms” verwendet werden, um Daten auf verschiedene Arten darzustellen. Beispiele für verschiedene Geoms werden auf der ersten Seite dieses ggplot2 <a href="https://rstudio.com/wp-content/uploads/2015/03/ggplot2-cheatsheet.pdf">Cheat Sheet</a> gezeigt.</p>
+<p>In dieser Übung werdet ihr die Grundlagen von <code>ggplot2</code> lernen, indem ihr dem Kapitel Datenvisualisierung des Buches <a href="https://r4ds.had.co.nz/index.html">R for Data Science</a> von Hadley Wickham (einer der tidyverse EntwicklerInnen) und Garrett Grolemund folgt. Dann werdet ihr einen Datensatz aus einem Experiment herunterladen, in dem untersucht wurde, wie sich die mikrobielle Diversität im Boden auf die Effizienz der Kohlenstoffnutzung auswirkt und die Umsetzung eurer neuen Datenvisualisierungsfähigkeiten üben.</p>
 <p>Das Arbeitsblatt für diese Aktivität findet ihr <a href="https://docs.google.com/document/d/1bhtAQCIuzZ82dqD-FLB4_BVT4BPwBN0Sz9VdHbrGDFA/edit?usp=sharing">hier</a>.</p>
 </div>
-<div id="mit-r-for-data-science-geht-es-weiter" class="section level2">
-<h2>Mit “R for Data Science” geht es weiter</h2>
+<div id="r-for-data-science-folgen" class="section level2">
+<h2>“R for Data Science” folgen</h2>
 <div id="installieren-von-tidyverse" class="section level3">
 <h3>Installieren von tidyverse</h3>
-<p>Das Paket ggplot2 ist Teil von <a href="https://www.tidyverse.org/">tidyverse</a>, einer Sammlung von Paketen für die Datenwissenschaft. Installiere zuerst das Paket:</p>
+<p>Das Paket ggplot2 ist Teil von <a href="https://www.tidyverse.org/">tidyverse</a>, einer Sammlung von Packages für die Datenwissenschaft. Installiert zuerst die Package:</p>
 <pre class="r"><code>install.packages(&quot;tidyverse&quot;)</code></pre>
-<p>dann lade das Paket:</p>
+<p>dann ladet die Package:</p>
 <pre class="r"><code>library(tidyverse)</code></pre>
-<pre><code>## ── Attaching packages ─────────────────────────────────── tidyverse 1.3.0 ──</code></pre>
+<pre><code>## ── Attaching packages ──────────────────────────────────────── tidyverse 1.3.0 ──</code></pre>
 <pre><code>## ✓ ggplot2 3.3.2     ✓ purrr   0.3.4
 ## ✓ tibble  3.0.1     ✓ dplyr   1.0.0
 ## ✓ tidyr   1.1.0     ✓ stringr 1.4.0
 ## ✓ readr   1.3.1     ✓ forcats 0.5.0</code></pre>
-<pre><code>## ── Conflicts ────────────────────────────────────── tidyverse_conflicts() ──
+<pre><code>## ── Conflicts ─────────────────────────────────────────── tidyverse_conflicts() ──
 ## x dplyr::filter() masks stats::filter()
 ## x dplyr::lag()    masks stats::lag()</code></pre>
 </div>
-<div id="lass-uns-lernen-wie-man-ggplot2-benutzt" class="section level3">
-<h3>Lass uns lernen, wie man <code>ggplot2</code> benutzt!</h3>
-<p><strong>Öffne ein neues R-Skript in RStudio, damit ihr eure Arbeit speichern könnt.</strong> Wenn ihr in Zukunft Projekte habt, die Daten beinhalten, ist es nützlich, ein Skript mit funktionierendem Code gespeichert zu haben, auf das ihr zurückgreifen könnt. <strong>Hinweis:</strong> in diesem Praktikum werdet ihr zwei Mal Datenvisualisierungen erstellen müssen, also <em>ihr</em> seid Personen, die derzeit zukünftige Projekte hat, die Daten beinhalten.</p>
+<div id="lasst-uns-lernen-wie-man-ggplot2-benutzt" class="section level3">
+<h3>Lasst uns lernen, wie man <code>ggplot2</code> benutzt!</h3>
+<p><strong>Öffnet ein neues R-Skript in RStudio, damit ihr eure Arbeit speichern könnt.</strong> Wenn ihr in Zukunft Projekte habt, die Daten beinhalten, ist es nützlich, ein Skript mit funktionierendem Code gespeichert zu haben, auf das ihr zurückgreifen könnt. <strong>Hinweis:</strong> in diesem Praktikum werdet ihr zwei Mal Datenvisualisierungen erstellen müssen, also seid <em>ihr</em> Personen, die derzeit zukünftige Projekte haben, die Daten beinhalten.</p>
 <p>Um eure R-Skripte noch nützlicher für eure Zukunft zu machen, könnt ihr Kommentare hinzufügen, indem ihr das #-Symbol verwendet - das sagt R, dass es diesen Teil nicht auswerten soll. Hier ist ein Beispiel:</p>
 <pre class="r"><code>12 * 7 # This multiplies twelve by seven.</code></pre>
 <pre><code>## [1] 84</code></pre>
-<p>Öffne das Kapitel <a href="https://r4ds.had.co.nz/data-visualisation.html">Datenvisualisierung</a>. Lies die Abschnitte 3.1-3.3 und bearbeite die Übungen nach und nach (achte besonders auf die Übungen in <a href="https://r4ds.had.co.nz/data-visualisation.html#exercises-1">Abschnitt 3.3.1</a>). <strong>Tipp:</strong> Auf der rechten Seite der Code Chunks befindet sich ein “Copy”-Button. Mit diesem könnt ihr die Codezeilen direkt in euer R-Skript kopieren und euch Notizen zu den Kommentaren machen.</p>
-<p>Ihr werdet mit einem Datensatz im ggplot Paket namens <code>mpg</code> arbeiten, der Informationen über 38 verschiedene Autotypen enthält, die von der US EPA gesammelt wurden. (Falls ihr das Thema Autos nicht spannend findet, keine Sorge, später in der Übung werdet ihr mit ökologischen Daten arbeiten).</p>
-<p>Lies nun <a href="https://r4ds.had.co.nz/data-visualisation.html#common-problems">Abschnitt 3.4 - Häufige Probleme</a> und fühle euch ein wenig besser, wenn ihr R-Probleme habt…wir alle haben sie. Lies nun weiter und bearbeite die Übungen in den Abschnitten 3.5-3.6, um etwas über ‘geoms’ und ‘facets’ zu lernen. Wenn ihr das getan habt, seid ihr bereit für den nächsten Teil der Übung!</p>
+<p>Öffnet das Kapitel <a href="https://r4ds.had.co.nz/data-visualisation.html">Datenvisualisierung</a>. Lest die Abschnitte 3.1-3.3 und bearbeitet die Übungen nach und nach (achtet besonders auf die Übungen in <a href="https://r4ds.had.co.nz/data-visualisation.html#exercises-1">Abschnitt 3.3.1</a>). <strong>Tipp:</strong> Auf der rechten Seite der Code Chunks befindet sich ein “Copy”-Button. Mit diesem könnt ihr die Codezeilen direkt in euer R-Skript kopieren und euch Notizen zu den Kommentaren machen.</p>
+<p>Ihr werdet mit einem Datensatz in der ggplot Package namens <code>mpg</code> arbeiten, der Informationen über 38 verschiedene Autotypen enthält, die von der US EPA gesammelt wurden. (Falls ihr das Thema Autos nicht spannend findet, keine Sorge, später in der Übung werdet ihr mit ökologischen Daten arbeiten).</p>
+<p>Lest nun <a href="https://r4ds.had.co.nz/data-visualisation.html#common-problems">Abschnitt 3.4 - Häufige Probleme</a> und fühlr euch ein wenig besser, wenn ihr R-Probleme habt…wir alle haben sie. Lies nun weiter und bearbeite die Übungen in den Abschnitten 3.5-3.6, um etwas über ‘geoms’ und ‘facets’ zu lernen. Wenn ihr das getan habt, seid ihr bereit für den nächsten Teil der Übung!</p>
 </div>
 </div>
-<div id="datenvisualisierung-zeit" class="section level2">
-<h2>Datenvisualisierung Zeit</h2>
+<div id="zeit-für-datenvisualisierung" class="section level2">
+<h2>Zeit für Datenvisualisierung</h2>
 <p>Habt ihr schon von Open Science gehört? Das ist eine Bewegung in der wissenschaftlichen Gemeinschaft, die Wert auf Transparenz im gesamten wissenschaftlichen Prozess legt. Das kann die Veröffentlichung von Artikeln mit Open Access beinhalten, die Bereitstellung von Daten und Code und sogar die Veröffentlichung von Informationen über den Versuchsaufbau und die Datenerhebung. Für unsere Übung werden wir Daten verwenden, die durch das Open Science Framework (OSF) öffentlich zugänglich sind.</p>
-<p>Diese Daten stammen von <a href="https://doi.org/10.1038/s41467-020-17502-z">Domeignoz-Horta et al. 2020</a>. Es wäre jetzt eine gute Idee, sich ein paar Minuten Zeit zu nehmen, um den Artikel zu überfliegen. Was war ihre Forschungsfrage? Was war ihr experimentelles Design? Wirf einen Blick auf die Zahlen und die wichtigsten Ergebnisse.</p>
-<p>Ihr findet die Daten von Domeignoz-Horta <em>et al.</em> 2020 über <a href="https://osf.io/qmf8z/">OSF</a>. Klicke unter ‘Files’ auf das ‘+’ Zeichen neben ‘Data’ und lade die Datei <strong>Fig.2.Data.txt</strong> herunter. Achte darauf, dass ihr sie in einem Ordner speichert, den ihr finden könnt.</p>
+<p>Diese Daten stammen von <a href="https://doi.org/10.1038/s41467-020-17502-z">Domeignoz-Horta et al. 2020</a>. Jetzt wäre es eine gute Idee, sich ein paar Minuten Zeit zu nehmen, um den Artikel zu überfliegen. Was war ihre Forschungsfrage? Was war ihr experimentelles Design? Werft einen Blick auf die Zahlen und die wichtigsten Ergebnisse.</p>
+<p>Ihr findet die Daten von Domeignoz-Horta <em>et al.</em> 2020 über <a href="https://osf.io/qmf8z/">OSF</a>. Klickt unter ‘Files’ auf das ‘+’ Zeichen neben ‘Data’ und ladet die Datei <strong>Fig.2.Data.txt</strong> herunter. Achte darauf, dass ihr sie in einem Ordner speichert, den ihr finden könnt.</p>
 <div id="auschecken-der-daten" class="section level3">
 <h3>1. Auschecken der Daten</h3>
-<p>Lade die Daten in R (Tipp: versuche es mit <code>read.table</code>). Nun überprüfe sie. Was sind die Dimensionen dieses Datenrahmens? Wie lauten die Spaltennamen? Gehe nun zurück zum Abschnitt Methoden von Domeignoz-Horta et al. 2020. Was war ihr experimentelles Design? Welche Behandlungen haben sie angewandt? Wo findet man in deinem Datenrahmen Informationen über die Behandlungen? Welche Responsevariablen haben sie gemessen? Wo findet man in deinem Datenrahmen Informationen über die Responsevariablen?</p>
-<p>(<em>Fülle eure Antworten auf diese Fragen in das Arbeitsblatt ein</em>)</p>
+<p>Ladet die Daten in R (Tipp: versucht es mit <code>read.table</code>). Nun überprüft sie. Was sind die Dimensionen dieses Data Frames? Wie lauten die Spaltennamen? Geht nun zurück zum Abschnitt Methoden von Domeignoz-Horta et al. 2020. Was war ihr experimentelles Design? Welche Behandlungen haben sie angewandt? Wo findet man in eurem Data Frame Informationen über die Behandlungen? Welche Response-Variablen haben sie gemessen? Wo findet man in eurem Data Frame Informationen über die Response-Variablen?</p>
+<p><em>Fügt eure Antworten auf diese Fragen in das Arbeitsblatt ein</em></p>
 </div>
 <div id="vergleich-verschiedener-möglichkeiten-zur-visualisierung-der-daten" class="section level3">
 <h3>2. Vergleich verschiedener Möglichkeiten zur Visualisierung der Daten</h3>
-<p>Der Rest dieser Übung wird die Verwendung von <code>ggplot2</code> beinhalten, um die Beziehung zwischen Diversität und Carbon Use Efficiency (CUE) auf verschiedene Arten zu visualisieren. Ignoriere für den Moment den Rest der Daten und verwende nur diese zwei Variablen.</p>
-<p>Gehe zurück zu <a href="https://r4ds.had.co.nz/data-visualisation.html#a-graphing-template">Abschnitt 3.2.3 von R for Data Science</a>, oder besser, schaue im Skript nach, wenn man eine Erinnerung an die Vorlage für ggplot braucht.</p>
-<p>Beginne damit, einen Boxplot mit <code>geom_boxplot</code> mit diesen Daten zu erstellen. Erstelle nun mit den gleichen Daten einen Violinplot (<code>geom_violin</code>) und einen Plot, der die rohen Datenpunkte zeigt (<code>geom_jitter</code>). Ich würde empfehlen, <code>position=position_jitter(0.2)</code> in der ‘aesthetics’ eures Jitter-Plots hinzuzufügen, um einfacher zu sehen, welche Punkte zu jeder Behandlungsgruppe gehören.</p>
+<p>Im Rest dieser Übung wird gezeigt, wie man mit <code>ggplot2</code> die Beziehung zwischen Diversität und Carbon Use Efficiency (CUE) auf verschiedene Arten visualisieren kann. Ignoriert für den Moment den Rest der Daten und verwende nur diese zwei Variablen.</p>
+<p>Geht zurück zu <a href="https://r4ds.had.co.nz/data-visualisation.html#a-graphing-template">Abschnitt 3.2.3 von R for Data Science</a>, oder besser, schaut im Skript nach, wenn ihr eine Erinnerung an die Vorlage für ggplot braucht.</p>
+<p>Beginnt damit, einen Boxplot mit <code>geom_boxplot</code> mit diesen Daten zu erstellen. Erstellt nun mit den gleichen Daten einen Violinplot (<code>geom_violin</code>) und einen Plot, der die rohen Datenpunkte zeigt (<code>geom_jitter</code>). Ich würde empfehlen, <code>position=position_jitter(0.2)</code> in die ‘aesthetics’ eure Jitter-Plots hinzuzufügen, um einfacher zu sehen, welche Punkte zu jeder Behandlungsgruppe gehören.</p>
 <p><em>Kopiere eure Plots in das Arbeitsblatt und schreibe 1-2 Sätze, die sie vergleichen.</em></p>
 </div>
 <div id="fehlerbalken-und-kombinieren-von-geoms" class="section level3">
@@ -1574,18 +1574,18 @@ div.tocify {
 <pre class="r"><code>ggplot(data = data, mapping = aes(X, Y)) +
   geom_&lt;GEOM_TYPE_HERE&gt;() +
   stat_summary(fun.data = mean_se, geom=&quot;errorbar&quot;, color=&quot;black&quot;)</code></pre>
-<p>Füge Fehlerbalken zu eure Darstellungen hinzu. Wie verbessert dies euer Verständnis für die Daten?</p>
-<p>Was passiert, wenn ihr mehrere ‘geoms’ im selben Diagramm einfügt? Bei einigen Datentypen kombiniere ich gerne Violinplots (damit ich die Verteilung der Daten besser sehen kann) mit den Rohdatenpunkten, die oben aufgetragen sind (damit ich sehen kann. Versuche <code>geom_violin</code>, <code>geom_jitter</code> und Fehlerbalken im selben Diagramm zu kombinieren.</p>
-<p><em>Füge diesen Plot in das Aktivitätsblatt ein. Denkt ihr, dass diese Kombination besser oder schlechter ist als die einzelnen Plots aus Teil 1? Warum?</em></p>
+<p>Fügt Fehlerbalken zu eurer Abbildung hinzu. Wie verbessert dies euer Verständnis für die Daten?</p>
+<p>Was passiert, wenn ihr mehrere ‘geoms’ im selben Diagramm einfügt? Bei einigen Datentypen kombiniere ich gerne Violinplots (damit ich die Verteilung der Daten besser sehen kann) mit den Rohdatenpunkten, die oben aufgetragen sind. Versucht <code>geom_violin</code>, <code>geom_jitter</code> und Fehlerbalken im selben Plot zu kombinieren.</p>
+<p><em>Fügt diesen Plot in das Aktivitätsblatt ein. Denkt ihr, dass diese Kombination besser oder schlechter ist als die einzelnen Plots aus Teil 1? Warum?</em></p>
 </div>
 <div id="mehr-variablen-einbeziehen" class="section level3">
 <h3>4. Mehr Variablen einbeziehen</h3>
-<p>Bis jetzt haben wir nur Informationen über eine der experimentellen Behandlungen verwendet: die mikrobielle Diversität. Jetzt können wir informativere Darstellungen erstellen, indem wir Informationen von weiteren Variablen einbeziehen.</p>
-<p>Die Forschergruppe, die diese Daten erstellt hat, hat zwei abiotische Variablen untersucht: Temperatur und Feuchtigkeit. Integriere diese Variablen in die Darstellung, indem sie auf eine ‘aesthetic’ (z.B. Farbe, Form) ‘mapped’ werden. <strong>Hinweis:</strong> Beziehe dich auf <a href="https://r4ds.had.co.nz/data-visualisation.html#aesthetic-mappings">Abschnitt 3.3 von R for Data Science</a>.</p>
-<p>Es könnte einfacher sein, zu verstehen, was mit allen 3 Variablen passiert, wenn wir uns einige der Daten separat ansehen. Dies kann mit Hilfe von ‘facets’ erreicht werden (springe zurück zu <a href="https://r4ds.had.co.nz/data-visualisation.html#facets">Abschnitt 3.5 von R for Data Science</a>, um eurer Erinnerung auf die Sprünge zu helfen). Versuche <code>facet_wrap</code> für eine dieser Variablen und <code>facet_grid</code> für beide zu verwenden.</p>
-<p>Erstelle schließlich einen Plot, bei dem eine abiotische Variable auf eine Plot aesthetic ‘mapped’ wird und die andere zur ‘facets’ des Plots verwendet wird.</p>
-<p><em>Welchen der Plots aus dem Abschnitt fandet ihr am informativsten und warum? Kopiere diesen Plot in das Arbeitsblatt. Jetzt, wo ihr diese Daten erforscht habt, was könnt ihr über die Auswirkungen der mikrobiellen Vielfalt im Boden auf den CUE sagen? Wird dies durch Temperatur oder Feuchtigkeit beeinflusst? Wenn ja, wie?</em></p>
-<p><em>Erinnere daran, dass wir hier nur eine erste Datenexploration gemacht haben. Um die obigen Fragen wirklich zu beantworten, ist es notwendig, eine statistische Analyse durchzuführen. Welche Art von Statistik haben Domeignoz-Horta et al. durchgeführt und was waren ihre Ergebnisse?</em></p>
+<p>Bis jetzt haben wir nur Informationen über eine der experimentellen Behandlungen verwendet: die mikrobielle Diversität. Jetzt können wir informativere Abbildung erstellen, indem wir Informationen von weiteren Variablen einbeziehen.</p>
+<p>Die Forschungsgruppe, die diese Daten erstellt hat, hat zwei abiotische Variablen untersucht: Temperatur und Feuchtigkeit. Integriert diese Variablen in die Darstellung, indem sie auf eine ‘aesthetic’ (z.B. Farbe, Form) ‘gemapped’ werden. <strong>Hinweis:</strong> Seht euch <a href="https://r4ds.had.co.nz/data-visualisation.html#aesthetic-mappings">Abschnitt 3.3 von R for Data Science</a> an.</p>
+<p>Es könnte einfacher sein, zu verstehen, was mit allen 3 Variablen passiert, wenn wir uns einige der Daten separat ansehen. Dies kann mit Hilfe von ‘facets’ erreicht werden (springt zurück zu <a href="https://r4ds.had.co.nz/data-visualisation.html#facets">Abschnitt 3.5 von R for Data Science</a>, um eurer Erinnerung auf die Sprünge zu helfen). Versucht <code>facet_wrap</code> für eine dieser Variablen und <code>facet_grid</code> für beide zu verwenden.</p>
+<p>Erstellt schließlich einen Plot, bei dem eine abiotische Variable auf eine Plot aesthetic ‘gemapped’ wird und die andere zur ‘facets’ des Plots verwendet wird.</p>
+<p><em>Welchen der Plots aus dem Abschnitt fandet ihr am informativsten und warum? Kopiert diesen Plot in das Arbeitsblatt. Jetzt, wo ihr diese Daten erforscht habt, was könnt ihr über die Auswirkungen der mikrobiellen Vielfalt im Boden auf den CUE sagen? Wird dies durch Temperatur oder Feuchtigkeit beeinflusst? Wenn ja, wie?</em></p>
+<p><em>Erinnert euch, dass wir hier nur eine erste Datenexploration gemacht haben. Um die obigen Fragen wirklich zu beantworten, ist es notwendig, eine statistische Analyse durchzuführen. Welche Art von Statistik haben Domeignoz-Horta et al. durchgeführt und was waren ihre Ergebnisse?</em></p>
 </div>
 </div>
 <div id="references" class="section level2">
