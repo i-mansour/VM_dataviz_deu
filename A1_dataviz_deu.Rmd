@@ -1,7 +1,7 @@
 ---
 title: "Praktikum Aktivität 1"
 author: "Dr. India Mansour, with translation by Ayla Kesim"
-date: "January 2021"
+date: "January 2021 (updated January 2022)"
 output: 
   html_document:
     toc: true
